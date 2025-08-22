@@ -1,0 +1,67 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "grocery-stock-management"
+version = "1.0.0"
+description = "CSC201 Task 1 - Grocery Stock Management System"
+authors = [
+    {name = "Student", email = "student@example.com"}
+]
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Education",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+
+# No runtime dependencies - using standard library only
+dependencies = []
+
+[project.scripts]
+grocery-sim = "src.grocery.cli:main"
+
+[tool.ruff]
+# Enable pycodestyle (E, W), Pyflakes (F), and isort (I) checks
+select = ["E", "W", "F", "I"]
+ignore = []
+
+# Line length set to 100
+line-length = 100
+
+# Allow unused variables when underscore-prefixed
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+# Target Python 3.10+
+target-version = "py310"
+
+[tool.ruff.mccabe]
+# Maximum cyclomatic complexity
+max-complexity = 10
+
+[tool.ruff.isort]
+# Use Black-compatible import sorting
+profile = "black"
+
+[tool.black]
+line-length = 100
+target-version = ['py310', 'py311', 'py312']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+)/
+'''
