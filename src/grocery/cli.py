@@ -19,6 +19,11 @@ def main(argv: list[str]) -> int:
         print(f"--- {path} ---")
         simulator = GrocerySimulator()
         simulator.run_file(path)
-        print()
+        print()  # one trailing blank line
     
     return 0
+
+
+if __name__ == "__main__":
+    import sys
+    raise SystemExit(main(sys.argv))

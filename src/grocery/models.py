@@ -19,10 +19,10 @@ class Batch:
 
 @dataclass
 class SaleComponent:
-    """Represents a component of a sale with quantity, cost, and sell price."""
+    """Represents a component of a sale with unit cost and discounted sell price."""
     qty: int
-    cost: float
-    sell: float
+    unit_cost: float
+    unit_sell_after_discount: float
 
 
 @dataclass
